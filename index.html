@@ -9,26 +9,27 @@
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f0f0f0;
+    padding: 0;
+    margin: 0;
   }
   #countdown {
     font-size: 36px;
-    margin-top: 50px;
+    margin-top: 20px;
   }
   #message {
     font-size: 24px;
-    margin-top: 20px;
-  }
-  #cute-stuff {
-    margin-top: 50px;
+    margin-top: 10px;
   }
   #list-section {
-    margin-top: 50px;
-    background-color: hsl(350, 62%, 70%);
+    margin-top: 20px;
+    background-color: #ffc0cb;
     padding: 20px;
     border-radius: 10px;
+    max-width: 400px; /* Adjust max-width as needed */
+    margin: 0 auto; /* Center the section */
   }
   #list-input {
-    width: 80%;
+    width: calc(100% - 80px); /* Adjust width */
     padding: 10px;
     margin-bottom: 10px;
     border: none;
@@ -40,11 +41,16 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    color: hsl(332, 74%, 82%);
+    color: white;
   }
   #list-items {
     text-align: left;
     margin-top: 20px;
+    padding-left: 0;
+    list-style-type: none;
+  }
+  #list-items li {
+    margin-bottom: 10px;
   }
 </style>
 </head>
@@ -52,13 +58,9 @@
 <h1>Countdown to July</h1>
 <div id="countdown"></div>
 <div id="message">We're going to be together soon, Pookie!</div>
-<div id="cute-stuff">
-  <!-- Pink elements -->
-</div>
-
 <!-- Embedded GIF -->
 <iframe src="https://giphy.com/embed/37jFFYnA5FrlH5fKKg" width="480" height="402" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-<p><a href="">our fav cats</a></p>
+<p><a href="https://giphy.com/stickers/achtung-tw-transparent-37jFFYnA5FrlH5fKKg">via GIPHY</a></p>
 
 <div id="list-section">
   <h2>Our List</h2>
@@ -119,11 +121,12 @@
     var item = snapshot.val().item;
     var itemList = document.getElementById("list-items");
     var li = document.createElement("li");
-    li.appendChild(document.createTextNode(item));
+    li.textContent = item;
     itemList.appendChild(li);
   });
 </script>
 
 </body>
 </html>
+
 
